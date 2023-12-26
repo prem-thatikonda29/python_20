@@ -51,16 +51,16 @@ def main():
     room4 = Room(104, "Available",30)
     room5 = Room(105, "Available",50)
 
-    print("Enter name: ", end="")
-    name = input("")
-    user1 = User(name, 1234)
-
     hotel = Hotel()
     hotel.add_room(room1)
     hotel.add_room(room2)
     hotel.add_room(room3)
     hotel.add_room(room4)
     hotel.add_room(room5)
+
+    print("Enter name: ", end="")
+    name = input("")
+    user1 = User(name, 1234)
 
     print("Welcome to Trivago!")
     while True:
