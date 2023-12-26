@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from time import sleep
 
 class Room:
     def __init__(self, roomID, availability, capacity):
@@ -34,6 +35,9 @@ class Hotel:
 
     def check_availability(self):
         available_rooms = [room for room in self.rooms if room.availability=="Available"]
+        print("Fetching available rooms...")
+        sleep(1.5)
+        print("Available rooms:")
         for room in available_rooms:
             print(f"Room {room.roomID}, Capacity: {room.capacity}")
 
@@ -76,6 +80,8 @@ def main():
             rid = int(input())
             roomToBook = hotel.find_room(rid)
             if roomToBook is not None:
+                print("Booking room...")
+                sleep(1)
                 roomToBook.book_room(user1)
                 hotel.book_room(roomToBook)
             else:
@@ -84,7 +90,6 @@ def main():
         elif cmd == '3':
             print("Exiting. Thank you!")
             break
-
 
 
 if __name__=="__main__":
