@@ -15,7 +15,7 @@ class Converse(Shoe):
     
 
     def add_shoe(self, shoeType):
-        print(f"{shoeType.color} {shoeType.lowOrHighTop} top {shoeType.tongueColor} tongue color {self.brand} added to store!")
+        print(f"{shoeType.color} {shoeType.lowOrHighTop}-top {shoeType.tongueColor} tongue-color {self.brand} added to store!")
 
 
 class CombatShoe(Shoe):
@@ -25,7 +25,7 @@ class CombatShoe(Shoe):
         self.jungleOrDesert = jungleOrDesert
 
     def add_shoe(self, shoeType):
-        print(f"{shoeType.color} {shoeType.brand} {self.militiaryBranch} {self.jungleOrDesert} camo combat boots added to store")
+        print(f"{shoeType.color} {shoeType.brand} {self.militiaryBranch} {self.jungleOrDesert}-camo combat boots added to store")
 
 
 class Sandal(Shoe):
@@ -35,7 +35,7 @@ class Sandal(Shoe):
         self.waterproof = waterproof
     
     def add_shoe(self, shoeType):
-        print(f"{shoeType.color} {shoeType.brand} {self.openOrClosedToe} toe {self.waterproof} sandals added to store!")
+        print(f"{shoeType.color} {shoeType.brand} {self.openOrClosedToe}-toe {self.waterproof} sandals added to store!")
 
 
 def main():
@@ -49,34 +49,34 @@ def main():
         choice = int(input("\nWhat do you want to add: "))
 
         if choice == 1:
-            color = input("\nEnter color of shoe: ")
-            brand = input("Enter brand: ")
+            color = input("\nEnter color of shoe: ").capitalize()
+            brand = input("Enter brand: ").capitalize()
             shoe = Shoe(color, brand)
             shoe.add_shoe(shoe)
         
         elif choice==2:
             print("\nWelcome to the Converse section!\n")
-            color = input("Enter color of converse: ")
-            low_or_high = input("Is it Low or High Top? (Type 'Low' or 'High'): ")
-            tongue_col = input("What is the color of Tongue? (Type 'Blue', 'Green', 'Red', 'Yellow', 'Black'")
+            color = input("Enter color of converse: ").capitalize()
+            low_or_high = input("Is it Low or High Top? (Type 'Low' or 'High'): ").capitalize()
+            tongue_col = input("What is the color of Tongue? (Type 'Blue', 'Green', 'Red', 'Yellow', 'Black': ").capitalize()
             converse = Converse(color, low_or_high, tongue_col)
             converse.add_shoe(converse)
             
         
         elif choice==3:
             print("\nWelcome to Combat Shoes Section!\n")
-            color = input("Enter color of combat shoe: ")
-            brand = input("Enter brand of shoe: ")
-            military_branch = input("Which branch does this belong to?(USAF/USMC/USN/USCG/USAR): ")
-            jd = input("Does it have Jungle or Desert camouflage? (Jungle/Desert): ")
+            color = input("Enter color of combat shoe: ").capitalize()
+            brand = input("Enter brand of shoe: ").capitalize()
+            military_branch = input("Which branch does this belong to?(USAF/USMC/USN/USCG/USAR): ").capitalize()
+            jd = input("Does it have Jungle or Desert camouflage? (Jungle/Desert): ").capitalize()
             combat_shoe = CombatShoe(color, brand, military_branch, jd)
             combat_shoe.add_shoe(combat_shoe)
         
 
         elif choice == 4:
             print("\nWelcome to the Sandals Section\n")
-            color = input("Enter color of sandals: ")
-            brand = input("Enter brand of sandals: ")
+            color = input("Enter color of sandals: ").capitalize()
+            brand = input("Enter brand of sandals: ").capitalize()
             openOrClosed = input("Open or closed toe? 'open' / 'closed' : ").lower()
             waterProof = input("Is it Waterproof? Type 'Yes'/'No': ").lower()
             if waterProof == 'yes':
