@@ -23,6 +23,7 @@ class Quiz:
         score = 0
 
         for question in self.questions:
+            print()
             question.display_question()
             user_answer = int(input("Your answer (enter the option number): "))
 
