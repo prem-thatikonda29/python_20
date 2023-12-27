@@ -1,3 +1,5 @@
+import os
+
 class Question:
     def __init__(self, text, options, correct_option):
         self.text = text
@@ -94,8 +96,8 @@ def main():
     user_name = input("Enter your name: ")
     user = User(user_name)
 
-    print("\n---------Welcome to QuizMania---------")
     while True:
+        print("\n---------Welcome to QuizMania---------")
         print("\n\n1) Maths Quiz")
         print("2) GK Quiz")
         print("3) Anime Quiz")
@@ -123,6 +125,7 @@ def main():
         while True:
             decision = input("Do you wanna take another quiz? 'y' / 'n': ")
             if decision=='y':
+                os.system('clear')
                 break
             elif decision=='n':
                 print("Thank you for playing!")
